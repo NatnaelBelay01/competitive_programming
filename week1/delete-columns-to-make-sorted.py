@@ -2,7 +2,8 @@ class Solution:
     def minDeletionSize(self, strs: List[str]) -> int:
 
         count = 0
-        strs = [list(i) for i in strs]
+
+        
 
         
        
