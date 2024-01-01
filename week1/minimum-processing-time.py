@@ -8,10 +8,11 @@ class Solution:
         print(total)
 
         total.sort()
-        tasks.sort(reverse=True)
+        tasks.sort()
 
+        n = len(tasks) - 1
         for idx in range(len(total)):
-            total[idx] += tasks[idx]
+            total[idx] += tasks[n - idx]
         
         return max(total)
         
