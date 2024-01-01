@@ -9,19 +9,14 @@ class Solution:
             max_idx = -1
 
             for i in range(idx , -1 , -1):
-
                 if (max_num < arr[i]):
-                    
                     max_num = arr[i]
-                    print(max_num)
                     max_idx = i
             
             arr[:max_idx + 1] = arr[max_idx::-1]
-            print(arr)
             result.append(max_idx + 1)
             arr[:idx + 1] = arr[idx::-1]
-            print(arr)
             result.append(idx + 1)
             idx -= 1
-        print(arr)
+  
         return result
