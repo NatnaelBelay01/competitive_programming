@@ -1,17 +1,21 @@
-class Solution:
-    def dividePlayers(self, skill: List[int]) -> int:
-
-        skill.sort()        
-        check = skill[0] + skill[-1]
-
-        first = 0
-        last = len(skill) - 1
-        result = 0
-        while(first < last):
-            if(skill[first] + skill[last] != check):
-                return -1
-            result += skill[first] * skill[last]
-            first += 1
-            last -= 1
+class Solution(object):
+    def dividePlayers(self, skill):
+        """
+        :type skill: List[int]
+        :rtype: int
+        """
+        skill.sort()
+        i , j = 0, len(skill) - 1
+        chek = skill[i] + skill[j]
+        while (i < j):
+            if (chek != skill[i] + skill[j]):
+                return (-1)
+            i += 1
+            j -= 1
+        i, j, chek = 0, len(skill) - 1, 0
+        while (i < j):
+            chek = chek + (skill[i] * skill[j])
+            i += 1
+            j -= 1
+        return (chek)
         
-        return result
