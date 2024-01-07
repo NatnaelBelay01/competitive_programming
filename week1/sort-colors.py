@@ -4,21 +4,21 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
 
-        first , last , idx = 0 , len(nums) - 1 , 0
+        first, mid ,last = 0, 0, len(nums) - 1
 
-        while (idx <= last):
 
-            if (nums[idx] == 0):
-                nums[idx] , nums[first] = nums[first] , nums[idx]
-                idx += 1
-                first += 1
-            elif (nums[idx] == 2):
-                nums[idx] , nums[last] = nums[last] , nums[idx]
+        while(mid <= last):
+            if(nums[mid] == 2):
+                nums[last] , nums[mid] = nums[mid] , nums[last]
                 last -= 1
+            elif(nums[mid] == 0):
+                nums[first] , nums[mid] = nums[mid] , nums[first]
+                mid += 1
+                first += 1
             else:
-                idx += 1
-        return nums
+                mid += 1
 
+        return nums
 
 
 
