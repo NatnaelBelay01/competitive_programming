@@ -6,10 +6,7 @@ class Solution:
 
             store = {}
             check = -1 * nums[idx]
-            for idx2 in range(len(nums)):
-
-                if(idx2 == idx):
-                    continue
+            for idx2 in range(idx+1 ,len(nums)):
 
                 if (nums[idx2] in store):
                     temp = []
