@@ -1,8 +1,6 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
 
-        if n == 1:
-            return ['()']
 
         self.ans = []        
         
@@ -11,11 +9,8 @@ class Solution:
 
 
             if len(path) == 2 * n:
-                #the base case
-                #check validity
-                #if valid append else quit
-                if 1:
-                   self.ans.append("".join(path[:])) 
+
+                self.ans.append("".join(path[:])) 
                 return
             if closep < openp:
                 return
