@@ -1,20 +1,17 @@
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
 
-        if nums[-1] < target:
-            return len(nums)
         
-        l , r = 0, len(nums) - 1
+        r = len(nums)
+        l = -1
 
-        while(l < r):
+        while(r > l + 1):
 
-            mid = (l + r) // 2
+            mid = (r + l) // 2
 
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] < target:
-                l = mid + 1
-            else:
+            if nums[mid] >= target:
                 r = mid
+            else:
+                l = mid
         
         return r
