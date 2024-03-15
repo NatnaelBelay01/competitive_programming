@@ -1,20 +1,16 @@
 class Solution:
     def nextGreatestLetter(self, letters: List[str], target: str) -> str:
 
-        if letters[0] > target or letters[-1] <= target:
-            return letters[0]
-        
+        r = len(letters)
+        l = -1
 
-
-        l , r = 0 , len(letters) - 1
-
-
-        while(l < r):
-
-            mid = (l + r) // 2
-            if letters[mid] > target:
+        while(r > l + 1):
+            
+            mid = (r + l) // 2
+            
+            if letters[mid] >  target:
                 r = mid
             else:
-                l = mid + 1
+                l = mid
         
-        return letters[l]
+        return letters[r] if r < len(letters) else letters[0]
