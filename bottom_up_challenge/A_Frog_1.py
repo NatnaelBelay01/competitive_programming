@@ -14,3 +14,5 @@ for i in range(len(h) - 1, -1, -1):
     dp[i] = min(a, b)
 
 print(dp[0])
+
+a = 0
